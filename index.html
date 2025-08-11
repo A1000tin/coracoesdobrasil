@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corações do Brasil — Doe Agora</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="logo.svg">
+</head>
+<body>
+<header class="site-header">
+  <img src="logo.svg" class="logo" alt="Corações do Brasil"/>
+  <nav class="nav">
+    <a href="#sobre">Sobre</a>
+    <a href="#historias">Histórias</a>
+    <a href="#impacto">Impacto</a>
+    <a href="#doar" class="cta">Doar Agora</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Uma doação pode salvar uma vida.</h1>
+      <p>Milhares de crianças no Brasil precisam de comida, roupas e esperança. Junte-se a nós: doe hoje e transforme o amanhã.</p>
+      <div class="hero-actions">
+        <button class="btn primary" onclick="openDonate()">Doar Agora</button>
+        <button class="btn secondary" onclick="scrollToSection('sobre')">Saiba Mais</button>
+      </div>
+      <div class="meta-line">Meta atual: <strong id="meta-value">R$ 0</strong> de R$ 50.000</div>
+    </div>
+    <div class="hero-image">
+      <!-- Use these sample images as placeholders; replace with real photos -->
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="criança sorrindo"/>
+    </div>
+  </section>
+
+  <section id="sobre" class="container">
+    <h2>Quem somos</h2>
+    <p>Somos a Corações do Brasil — uma iniciativa que nasce com a missão de reduzir a fome infantil e devolver dignidade a famílias em vulnerabilidade. Atuamos com distribuição de cestas básicas, apoio escolar e campanhas de saúde.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Missão</h3>
+        <p>Garantir alimentação e cuidado para crianças em situação de risco.</p>
+      </div>
+      <div class="card">
+        <h3>Visão</h3>
+        <p>Ser referência nacional em ações diretas e transparência.</p>
+      </div>
+      <div class="card">
+        <h3>Valores</h3>
+        <p>Transparência, amor ao próximo e responsabilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="historias" class="container light">
+    <h2>Histórias de impacto</h2>
+    <div class="story">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="mãe com criança"/>
+      <div class="story-text">
+        <h3>Maria, 6 anos</h3>
+        <p>Maria vivia sem comer direito e sem material escolar. Com a ajuda de doadores, teve sua primeira festa de aniversário e voltou a sorrir.</p>
+      </div>
+    </div>
+    <div class="story">
+      <img src="https://images.unsplash.com/photo-1509099836639-18ba6d7f5c17?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="pessoas ajudando">
+      <div class="story-text">
+        <h3>Comunidade do Vale</h3>
+        <p>Distribuímos 200 cestas básicas em 1 semana, com apoio de comerciantes locais e voluntários.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="impacto" class="container">
+    <h2>Como sua doação é usada</h2>
+    <ul class="impact-list">
+      <li>R$ 30 — cesta básica para uma família por 1 semana</li>
+      <li>R$ 50 — kit escolar para 1 criança</li>
+      <li>R$ 120 — consulta médica e remédios</li>
+    </ul>
+    <p class="small">Transparência: todos os gastos serão publicados mensalmente no site e nas redes sociais.</p>
+  </section>
+
+  <section id="doar" class="container light donate-section">
+    <h2>Doe agora</h2>
+    <p>Escolha a forma de doação: Pix (mais rápido), cartão ou depósito.</p>
+    <div class="donation-options">
+      <div class="don-box">
+        <h3>PIX</h3>
+        <p>Chave: <strong id="pix-key">PIX_CHAVE_EXEMPLO</strong></p>
+        <img src="assets/pix_qr.png" alt="QR PIX" class="pix-qr"/>
+        <p class="small">Escaneie o QR Code ou copie a chave para fazer sua doação.</p>
+      </div>
+      <div class="don-box">
+        <h3>Cartão</h3>
+        <p>Pagamentos por cartão via Mercado Pago / PagSeguro / Asaas (integração opcional).</p>
+      </div>
+      <div class="don-box">
+        <h3>Depósito</h3>
+        <p>Caixa Econômica — Agência: 0000 — Conta: 000000-0 — Titular: Corações do Brasil</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container light">
+    <h2>Como ajudar além do dinheiro</h2>
+    <ul>
+      <li>Seja voluntário nas entregas</li>
+      <li>Compartilhe nossas histórias nas redes</li>
+      <li>Parcerias com comércios locais para doações em pontos físicos</li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">
+    <div>© Corações do Brasil - <span id="year"></span></div>
+    <div class="socials">Siga: <a href="#" target="_blank">Instagram</a> • <a href="#" target="_blank">TikTok</a></div>
+  </footer>
+</main>
+
+<!-- Donation modal (for mobile quick donate) -->
+<div id="donateModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close" onclick="closeDonate()">×</button>
+    <h3>Doar via Pix</h3>
+    <p>Escaneie o QR ou copie a chave.</p>
+    <img src="assets/pix_qr.png" alt="PIX QR" style="max-width:260px;display:block;margin:12px auto"/>
+    <p><strong id="modal-pix-key">PIX_CHAVE_EXEMPLO</strong></p>
+    <p class="small">Depois de doar, envie um comprovante pelo WhatsApp: <a href="https://wa.me/5511999999999" target="_blank">Clique aqui</a> (substitua pelo seu número).</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
